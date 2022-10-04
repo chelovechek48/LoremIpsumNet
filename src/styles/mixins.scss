@@ -1,0 +1,11 @@
+@mixin touch-screen-only {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin focus {
+  outline: 3px blue solid;
+  outline-offset: 5px;
+  transition: outline 0s;
+}

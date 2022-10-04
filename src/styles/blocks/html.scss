@@ -1,0 +1,20 @@
+@use '../variables/colors' as *;
+
+.html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $gray-blue-dark;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 30px;
+    border: 5px solid transparent;
+    background-clip: padding-box;
+  }
+  scrollbar-color: $blue $gray-blue-dark;
+}

@@ -1,0 +1,9 @@
+@use '../common' as *;
+
+.span {
+  &_color {
+    &_blue {
+      color: $blue;
+    }
+  }
+}

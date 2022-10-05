@@ -1,8 +1,14 @@
-@use '../variables/colors' as *;
+@use '../common' as *;
 
 .page {
   font-family: 'Lato', sans-serif;
   background-color: $gray-blue-medium;
   margin: 0;
   padding: 0;
+
+  @include touch-screen-only {
+    &.scroll-lock {
+      overflow: hidden;
+    }
+  }
 }

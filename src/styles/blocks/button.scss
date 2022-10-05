@@ -1,0 +1,36 @@
+@use '../common' as *;
+
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:focus-visible {
+    @include focus-item;
+    border-radius: $item-border-radius;
+  }
+  &_text {
+    font-family: 'Lato';
+    font-size: toRem(13);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    min-width: 180px;
+    flex: 1 0 180px;
+    border-radius: $item-border-radius;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  &_theme {
+    @mixin button_theme($color, $background, $border-color) {
+      color: $color;
+      background-color: $background;
+      border: 1px solid $border-color;
+    }
+    &_blue {
+      @include button_theme($white, $blue, $white);
+    }
+    &_white {
+      @include button_theme(#2A2B30, $white, #6F6D7B);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use '../common' as *;
+
+.list {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &_style {
+    &_dash {
+      list-style: '-  ';
+      margin-left: 1.5rem;
+    }
+    &_none {
+      list-style: none;
+    }
+  }
+}

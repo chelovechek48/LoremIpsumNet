@@ -1,0 +1,15 @@
+@use '../common' as *;
+
+.title {
+  margin: 0;
+  &_h1 {
+    font-size: clamp(toRem(40), 2rem + 1.6vw, toRem(48));
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &_h2 {
+    font-size: toRem(36);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}

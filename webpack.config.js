@@ -31,6 +31,8 @@ module.exports = {
     extensions: ['.js', '.sass', '.scss', '.css'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@fonts': path.resolve(__dirname, 'src/assets/fonts'),
     },
   },
   optimization: {
@@ -74,7 +76,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         type: 'asset',
-        // loader: 'url-loader',
       },
       {
         test: /\.js$/,

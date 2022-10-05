@@ -15,8 +15,8 @@ $header-background: #10101D;
     justify-content: space-between;
     gap: $gap-large;
     overflow-x: auto;
-    padding-top: container.$defence-padding;
-    padding-bottom: container.$defence-padding;
+    padding-top: container.$padding;
+    padding-bottom: container.$padding;
   }
   &__logo {
     font-size: toRem(28);

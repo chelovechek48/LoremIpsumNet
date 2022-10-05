@@ -1,6 +1,8 @@
 import '@/styles/style';
 
+const html = document.querySelector('.html');
 const page = document.querySelector('.page');
+const header = document.querySelector('.header');
 const logo = document.querySelector('.header__logo');
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.header__menu');
@@ -20,7 +22,7 @@ hamburger.addEventListener('click', () => {
   toggleMenu();
 });
 
-window.addEventListener('scroll', () => {
+document.addEventListener('scroll', () => {
   hideMenu();
 });
 logo.addEventListener('click', () => {
@@ -30,7 +32,20 @@ menu.addEventListener('click', () => {
   hideMenu();
 });
 
-const resizeWindow = () => {
-  hideMenu();
+const writeVariable = (name, value) => {
+  html.style.setProperty(name, value);
 };
-window.addEventListener('resize', resizeWindow);
+const calculateHeaderHeight = () => {
+  const headerHeight = `${header.offsetHeight}px`;
+  writeVariable('--header-height', headerHeight);
+};
+const calculateVariables = () => {
+  calculateHeaderHeight();
+};
+document.addEventListener('DOMContentLoaded', calculateVariables);
+
+const resizeWindowHandler = () => {
+  hideMenu();
+  calculateVariables();
+};
+document.addEventListener('resize', resizeWindowHandler);

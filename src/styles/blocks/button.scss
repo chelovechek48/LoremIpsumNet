@@ -13,17 +13,23 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    min-width: 180px;
-    flex: 1 0 180px;
+    min-width: toRem(180);
+    flex: 1 0 toRem(180);
     border-radius: $item-border-radius;
     padding: 15px;
     box-sizing: border-box;
   }
   &_theme {
-    @mixin button_theme($color, $background, $border-color) {
+    @mixin button_theme($color, $background, $border-color, $size: 1px) {
       color: $color;
       background-color: $background;
-      border: 1px solid $border-color;
+      box-shadow: 0 0 0 $size $border-color;
+      &:hover {
+        box-shadow:
+          0 0 0 1px $white,
+          0 0 0 ($size + 3) $blue,
+          0 0 0 ($size + 4) $white;
+      }
     }
     &_blue {
       @include button_theme($white, $blue, $white);

@@ -1,6 +1,10 @@
 @forward 'breakpoints';
 @forward 'colors';
 
+:root {
+  --header-height: 100px;
+}
+
 $item-border-radius: 3px;
 
 $gap-small: 5px;

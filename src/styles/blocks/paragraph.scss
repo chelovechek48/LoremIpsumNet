@@ -1,0 +1,7 @@
+@use '../common' as *;
+
+.paragraph {
+  color: $color-paragraph;
+  font-size: toRem(18);
+  margin: 0;
+}

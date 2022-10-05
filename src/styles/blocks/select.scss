@@ -1,0 +1,114 @@
+@use '../common' as *;
+@use 'container';
+@use 'form';
+
+$margin-right: calc(form.$item-padding + 10px);
+$item-line-height: form.$item-min-height;
+
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+  &__inner {
+    position: absolute;
+    inset: 0;
+    padding: 0 form.$item-padding;
+    line-height: $item-line-height;
+  }
+  &__item {
+    margin-right: $margin-right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__dropdown {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    &:not(.is-active) {
+      visibility: hidden;
+    }
+  }
+  &__dropdown &__item {
+    color: $white;
+    &:not(.select__placeholder) {
+      padding: 5px form.$item-padding;
+      &.is-highlighted {
+        color: $blue;
+      }
+    }
+  }
+  &__dropdown &__placeholder {
+    position: absolute;
+    max-width: 100%;
+    bottom: 100%;
+    pointer-events: none;
+    padding: 0 (form.$item-padding + $margin-right) 0 form.$item-padding;
+    line-height: $item-line-height;
+    box-sizing: border-box;
+  }
+  &__dropdown &__list {
+    max-height: toRem(180);
+    overflow-y: auto;
+    background-color: $gray-blue-dark;
+    box-shadow: 0 0 0 form.$item-border-size $gray-blue-light;
+    border-radius: 0 0 $item-border-radius $item-border-radius;
+
+    &::-webkit-scrollbar {
+      width: 13px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $gray-blue-light;
+      border-radius: 30px;
+      border: 3px solid $gray-blue-dark;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+      border-radius: 30px;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+    }
+  }
+  &.is-open {
+    box-shadow: 0 0 0 form.$item-border-size $gray-blue-light;
+  }
+  &.is-open, &.is-open &__placeholder {
+    background-color: $gray-blue-light;
+    border-radius: $item-border-radius $item-border-radius 0 0;
+  }
+  &.is-open.is-flipped, &.is-open.is-flipped &__placeholder {
+    border-radius: 0 0 $item-border-radius $item-border-radius;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 2px);
+    right: form.$item-padding;
+
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 4px;
+
+    pointer-events: none;
+    transform: translateY(-50%) rotate(-135deg);
+  }
+  &.is-open::after {
+    border-color: $white;
+    border-width: 1px 0 0 1px;
+    top: calc(50% - 2px);
+  }
+  .is-flipped &__dropdown {
+    top: auto;
+    bottom: 100%;
+  }
+  .is-flipped &__dropdown &__list {
+    border-radius: $item-border-radius $item-border-radius 0 0;
+  }
+  .is-flipped &__placeholder {
+    top: 100%;
+    bottom: auto;
+  }
+}

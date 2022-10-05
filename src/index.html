@@ -69,5 +69,137 @@
       <hr class="hero__separator">
     </div>
   </section>
+  <section class="order" id="order">
+    <div class="order__container container">
+      <header class="order__header">
+        <h2 class="title title_h2">
+          Оформление <span class="span span_color_blue">Заказа</span>
+        </h2>
+        <p class="paragraph">
+          Перед заполнением формы ознакомьтесь с нашей схемой работы!
+        </p>
+      </header>
+      <div class="order__features" tabindex="-1">
+        <ul class="order__features-list list list_style_none">
+          <li class="order__features-item">
+            <div class="order__features-circle">
+              <img class="order__features-icon" src="assets/images/order/icons/search.png" alt="иконка поиска">
+            </div>
+            <span class="order__features-text">
+              Сonsecteturadipiscing elit
+            </span>
+          </li>
+          <li class="order__features-item">
+            <div class="order__features-circle">
+              <img class="order__features-icon" src="assets/images/order/icons/percent.png" alt="иконка процентов">
+            </div>
+            <span class="order__features-text">
+              Sed do eiusmod tempor
+            </span>
+          </li>
+          <li class="order__features-item">
+            <div class="order__features-circle">
+              <img class="order__features-icon" src="assets/images/order/icons/create-file.png" alt="иконка документов">
+            </div>
+            <span class="order__features-text">
+              Esse cillum doloreeu fugiat
+            </span>
+          </li>
+          <li class="order__features-item">
+            <div class="order__features-circle">
+              <img class="order__features-icon" src="assets/images/order/icons/mail.png" alt="иконка почты">
+            </div>
+            <span class="order__features-text">
+              Excepteur sint occaecat cupidatat non proident
+            </span>
+          </li>
+          <li class="order__features-item">
+            <div class="order__features-circle">
+              <img class="order__features-icon" src="assets/images/order/icons/banknote.png" alt="иконка банкноты">
+            </div>
+            <span class="order__features-text">
+              Lorem ipsum dolor sit amet.
+            </span>
+          </li>
+        </ul>
+      </div>
+      <form
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+        class="form"
+      >
+        <select name="system-type"
+          required
+          class="form__item form__item_font-size_large form__item_hidden"
+        >
+          <option value="" selected>Выберите тип системы</option>
+          <option value="Sed">Sed ut perspiciatis</option>
+          <option value="Nemo">Nemo enim ipsam</option>
+          <option value="Et">Et harum quidem</option>
+          <option value="Temporibus">Temporibus autem</option>
+          <option value="Itaque">Itaque earum rerum</option>
+          <option value="Ipsum">Ipsum dolor sit amet.</option>
+          <option value="Amet">Amet adipisicing elit.</option>
+          <option value="Harum">Harum quidem</option>
+          <option value="Quas">Quas sed fugiat</option>
+          <option value="Earum">Earum rerum</option>
+        </select>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Ваш e-mail"
+          required
+          class="form__item form__item_theme_gray form__item_font-size_large"
+        >
+
+        <input
+          type="text" 
+          name="user-name"
+          placeholder="Ваше имя"
+          class="form__item form__item_theme_gray form__item_font-size_large"
+        >
+
+        <label class="form__range form__item form__item_font-size_large">
+          <header class="form__range-text">
+            Sed ut perspiciatis, unde omnis iste natus
+            <span class="form__range-value">75 %</span>
+          </header>
+          <input
+            type="range"
+            name="percent"
+            value="75"
+            max="100"
+            class="form__range-input"
+          >
+        </label>
+        
+        <label
+          class="form__button form__item form__item_theme_white form__item_font-size_small"
+          tabindex="-1"
+        >
+          <img
+            class="form__button-icon"
+            src="assets/images/order/icons/file.png"
+            alt="иконка файла"
+          >
+          Прикрепить файл
+          <input
+            type="file"
+            name="file"
+            required
+            class="form__item_hidden"
+          >
+        </label>
+
+        <input
+          type="submit"
+          value="Отправить"
+          class="form__submit form__item form__item_theme_blue form__button form__item_font-size_small"
+        >
+      </form>
+    </div>
+  </section>
 </body>
 </html>

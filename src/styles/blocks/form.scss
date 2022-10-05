@@ -1,0 +1,183 @@
+@use '../common' as *;
+
+$item-padding: 10px;
+$item-border-size: 1px;
+$item-min-height: toRem(48);
+
+.form {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap-medium;
+  &__item {
+    font-family: "Lato", sans-serif;
+    outline: none;
+    border: 0;
+    width: 100%;
+    min-height: $item-min-height;
+    border-radius: $item-border-radius;
+    box-sizing: border-box;
+    &:not(.form__range) {
+      padding: $item-padding;
+    }
+    &:not(.is-open):focus-within {
+      @include focus-item;
+    }
+    &_theme {
+      @mixin theme($color, $background, $border-color, $size: 1px) {
+        color: $color;
+        background-color: $background;
+        box-shadow: 0 0 0 $size $border-color;
+        transition: 0.1s;
+        &:is(.form__button):hover {
+          box-shadow: 0 0 0 ($size + 3) $border-color;
+        }
+      }
+      &_gray {
+        @include theme(
+          $gray-blue-medium, $pale, $white, $item-border-size);
+      }
+      &_blue {
+        @include theme(
+          $white, $blue, $white, $item-border-size);
+      }
+      &_white {
+        @include theme(
+          $gray-blue-medium, $white, $blue, $item-border-size);
+      }
+    }
+    &_font-size {
+      &_small {
+        font-size: toRem(15);
+        font-weight: 600;
+      }
+      &_large {
+        font-size: toRem(18);
+      }
+    }
+    &_hidden {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    &-icon {
+      height: toRem(20);
+    }
+  }
+  &__range {
+    &-text {
+      display: flex;
+      justify-content: space-between;
+      gap: $gap-medium;
+      margin-bottom: 10px;
+    }
+    &-value {
+      white-space: nowrap;
+    }
+    &-input {
+      width: 100%;
+      -webkit-appearance: none;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+  
+      &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        background: $pale;
+        border-radius: 50px;
+        border: 1px solid $white;
+      }
+      &::-webkit-slider-thumb {
+        border: 3px solid $dark-blue;
+        height: 26px;
+        width: 26px;
+        border-radius: 50px;
+        background: $blue;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -11.5px;
+      }
+  
+      &::-moz-range-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: $pale;
+        border-radius: 50px;
+        border: 1px solid $white;
+      }
+      &::-moz-range-thumb {
+        border: 3px solid $dark-blue;
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background: $blue;
+        cursor: pointer;
+      }
+  
+      &::-ms-track {
+        width: 100%;
+        height: 5px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      &::-ms-fill-lower {
+        background: $pale;
+        border: 1px solid $white;
+        border-radius: 100px;
+      }
+      &::-ms-fill-upper {
+        background: $pale;
+        border: 1px solid $white;
+        border-radius: 100px;
+      }
+      &::-ms-thumb {
+        margin-top: 1px;
+        border: 3px solid $dark-blue;
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background: $blue;
+        cursor: pointer;
+      }
+    }
+  }
+  &__submit {
+    margin-top: 15px;
+  }
+
+  @media (min-width: ($laptop + 1px)) {
+    grid-template-columns: repeat(3, 1fr);
+    &__range {
+      grid-column: 1 / 3;
+    }
+    &__submit {
+      grid-column: 2;
+    }
+  }
+  @media (max-width: $laptop) {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

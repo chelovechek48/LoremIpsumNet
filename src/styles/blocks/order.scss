@@ -1,0 +1,130 @@
+@use '../common' as *;
+@use 'container';
+
+$padding-target: calc(var(--header-height) + container.$padding);
+
+.order {
+  position: relative;
+  z-index: 1;
+  color: $white;
+  padding: 120px 0 150px 0;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/order/texture.png');
+    opacity: 0.1;
+    z-index: -1;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-large;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-medium;
+    text-align: center;
+  }
+  &__features {
+    overflow-x: hidden;
+    margin: 0 (0px - container.$padding);
+    padding: 0 container.$padding;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: $gap-medium;
+      font-size: toRem(16);
+      font-weight: 400;
+      text-align: center;
+      word-break: break-word;
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    &-item:not(:first-child) &-circle::before,
+    &-item:not(:last-child) &-circle::after {
+      content: '';
+      position: absolute;
+      width: var(--order-circle-gap);
+      height: 100%;
+      background-image: url('../assets/images/order/background-dots.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-y: center;
+    }
+    &-circle {
+      position: relative;
+      aspect-ratio: 1;
+      min-width: 100px;
+      background-color: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border-radius: 50%;
+      outline: 5px solid $dark-blue;
+      outline-offset: -5px;
+      &::before {
+        right: 100%;
+      }
+      &::after {
+        left: 100%;
+      }
+    }
+    &-icon {
+      max-width: 50px;
+      max-height: 50px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: (container.$padding + $gap-medium) 0;
+    transition: padding 0.3s;
+    &:target {
+      padding-top: $padding-target;
+    }
+    &__container {
+      gap: $gap-medium;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &__features {
+      &-list {
+        display: block;
+        font-size: toRem(20);
+        text-align: left;
+        margin: 0 (0px - container.$padding);
+      }
+      &-item {
+        flex-direction: row;
+        gap: $gap-small;
+        &:nth-child(odd) {
+          background-color: $gray-blue-light;
+        }
+        &:nth-child(even) {
+          background-color: $gray-blue-dark;
+        }
+      }
+      &-circle {
+        min-width: 60px;
+        background-color: transparent;
+        outline: none;
+        &::before, &::after {
+          display: none;
+        }
+      }
+      &-icon {
+        max-width: 40px;
+      }
+      &-text {
+        padding: 20px 20px 20px 0;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ $header-background: #10101D;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: $gap-large;
+    gap: $gap-medium;
     overflow-x: auto;
     padding-top: container.$padding;
     padding-bottom: container.$padding;
@@ -59,7 +59,7 @@ $header-background: #10101D;
       height: $menu-height;
       overflow-y: auto;
       background-color: rgb($header-background, 0.7);
-      padding: $gap-large;
+      padding: $gap-medium;
       box-sizing: border-box;
       transition: 0.5s;
       &:not(.is-open) {
@@ -71,7 +71,7 @@ $header-background: #10101D;
       text-align: center;
       white-space: normal;
       flex-direction: column;
-      gap: $gap-large;
+      gap: $gap-medium;
     }
     &__link {
       font-size: toRem(28);

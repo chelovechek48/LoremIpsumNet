@@ -20,11 +20,10 @@ $min-height: calc(100vh - var(--header-height));
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    word-break: break-word;
   }
   &__separator {
-    max-height: 80px;
-    flex: 1 0 $gap-large;
+    max-height: $gap-large;
+    flex: 1 0 $gap-medium;
     margin: 0;
     visibility: hidden;
     box-sizing: border-box;
@@ -44,17 +43,19 @@ $min-height: calc(100vh - var(--header-height));
   &__buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: container.$padding $gap-large;
+    gap: container.$padding $gap-medium;
   }
 
   @media (orientation: landscape) {
     min-height: $min-height;
   }
-  @media (max-width: $mobile) {
-    min-height: 100vh;
+  @media (max-width: $tablet) {
     background-position: left;
     &__separator {
       flex: 1 0 container.$padding;
     }
+  }
+  @media (max-width: $mobile) {
+    min-height: 100vh;
   }
 }

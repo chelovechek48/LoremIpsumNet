@@ -39,13 +39,33 @@ const calculateHeaderHeight = () => {
   const headerHeight = `${header.offsetHeight}px`;
   writeVariable('--header-height', headerHeight);
 };
+const calculateIconsGap = () => {
+  const iconFirst = document.querySelector('.order__features-item:nth-child(1) .order__features-circle');
+  const iconSecond = document.querySelector('.order__features-item:nth-child(2) .order__features-circle');
+  const iconsGap = `${iconSecond.offsetLeft - (iconFirst.offsetLeft + iconFirst.offsetWidth)}px`;
+
+  writeVariable('--order-circle-gap', iconsGap);
+};
 const calculateVariables = () => {
   calculateHeaderHeight();
+  calculateIconsGap();
 };
-document.addEventListener('DOMContentLoaded', calculateVariables);
 
+const rangeValue = document.querySelector('.form__range-value');
+const rangeInput = document.querySelector('.form__range-input');
+const updateInputRange = () => {
+  rangeValue.textContent = `${rangeInput.value} %`;
+};
+rangeInput.addEventListener('input', () => {
+  updateInputRange();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateInputRange();
+  calculateVariables();
+});
 const resizeWindowHandler = () => {
   hideMenu();
   calculateVariables();
 };
-document.addEventListener('resize', resizeWindowHandler);
+window.addEventListener('resize', resizeWindowHandler);

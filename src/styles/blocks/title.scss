@@ -2,6 +2,7 @@
 
 .title {
   margin: 0;
+  word-break: break-word;
   &_h1 {
     font-size: clamp(toRem(40), 2rem + 1.6vw, toRem(48));
     font-weight: 700;

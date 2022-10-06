@@ -71,16 +71,15 @@ $padding-target: calc(var(--header-height) + container.$padding);
     }
     &-circle {
       position: relative;
-      aspect-ratio: 1;
       min-width: 100px;
+      min-height: 100px;
       background-color: $blue;
       display: flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
       border-radius: 50%;
-      outline: 5px solid $dark-blue;
-      outline-offset: -5px;
+      box-shadow: 0 0 0 5px $dark-blue inset;
       &::before {
         right: 100%;
       }
@@ -128,8 +127,9 @@ $padding-target: calc(var(--header-height) + container.$padding);
       }
       &-circle {
         min-width: 60px;
+        min-height: 60px;
+        box-shadow: none;
         background-color: transparent;
-        outline: none;
         &::before, &::after {
           display: none;
         }

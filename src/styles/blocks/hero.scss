@@ -10,10 +10,21 @@ $min-height: calc(100vh - var(--header-height));
   flex-direction: column;
   justify-content: center;
   background-color: $white;
-  background-image: url('@images/hero/background.jpg');
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  @media (min-width: ($laptop + 1)) {
+    background-image: url('@images/hero/background_1920.jpg');
+  }
+  @media (max-width: $laptop) {
+    background-image: url('@images/hero/background_1024.jpg');
+  }
+  @media (max-width: $tablet) {
+    background-image: url('@images/hero/background_768.jpg');
+  }
+  @media (max-width: $mobile) {
+    background-image: url('@images/hero/background_500.jpg');
+  }
   &__container {
     flex: 1;
     display: flex;

@@ -164,7 +164,7 @@ $item-min-height: toRem(48);
     }
   }
   &__submit {
-    margin-top: 15px;
+    margin-top: calc($gap-medium / 2);
   }
 
   @media (min-width: ($laptop + 1px)) {

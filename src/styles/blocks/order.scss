@@ -83,13 +83,16 @@ $padding-target: calc(var(--header-height) + container.$padding);
   }
 
   @media (max-width: $tablet) {
-    padding: (container.$padding + $gap-medium) 0;
+    padding: $gap-medium 0;
     transition: padding 0.3s;
     &:target {
       padding-top: $padding-target;
     }
     &__container {
       gap: $gap-medium;
+    }
+    &__header {
+      gap: calc($gap-medium / 2);
     }
   }
 

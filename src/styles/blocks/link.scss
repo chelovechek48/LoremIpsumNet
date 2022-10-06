@@ -3,6 +3,10 @@
 .link {
   color: inherit;
   text-decoration: none;
+  transition: 0.2s;
+  &:hover {
+    color: $blue;
+  }
   &:focus-visible {
     @include focus-item;
     border-radius: $item-border-radius;

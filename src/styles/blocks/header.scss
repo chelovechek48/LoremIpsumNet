@@ -36,10 +36,6 @@ $header-background: #10101D;
   &__link {
     font-size: toRem(13);
     font-weight: 600;
-    transition: 0.2s;
-    &:hover {
-      color: $blue;
-    }
   }
 
   @media (min-width: ($laptop + 1px)) {

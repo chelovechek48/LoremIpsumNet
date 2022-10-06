@@ -20,22 +20,20 @@
     box-sizing: border-box;
   }
   &_theme {
-    @mixin button_theme($color, $background, $border-color, $size: 1px) {
+    @mixin theme($color, $background, $border-color, $size: 1px) {
       color: $color;
       background-color: $background;
       box-shadow: 0 0 0 $size $border-color;
+      transition: 0.1s;
       &:hover {
-        box-shadow:
-          0 0 0 1px $white,
-          0 0 0 ($size + 3) $blue,
-          0 0 0 ($size + 4) $white;
+        box-shadow: 0 0 0 ($size + 3) $border-color;
       }
     }
     &_blue {
-      @include button_theme($white, $blue, $white);
+      @include theme($white, $blue, $white);
     }
     &_white {
-      @include button_theme(#2A2B30, $white, #6F6D7B);
+      @include theme(#2A2B30, $white, #6F6D7B);
     }
   }
 }

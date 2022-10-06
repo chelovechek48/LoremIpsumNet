@@ -1,0 +1,60 @@
+@use '../common' as *;
+
+$footer-background: #3D4050;
+$footer-color: #C3C3C3;
+
+.footer {
+  padding: 30px 0;
+  background-color: $footer-background;
+  font-size: toRem(13);
+  text-align: center;
+  &__container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: toRem(30) 20px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    justify-content: center;
+    &-item {
+      color: $footer-color;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__icon {
+    width: toRem(20);
+    height: toRem(20);
+    margin-right: 10px;
+  }
+  &__separator {
+    width: 1px;
+    height: auto;
+    background-color: $footer-color;
+    margin: 0;
+    border: 0;
+  }
+  &__copyright {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__link {
+    color: $white;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: $tablet) {
+    &__container {
+      flex-direction: column;
+    }
+    &__separator {
+      display: none;
+    }
+  }
+}

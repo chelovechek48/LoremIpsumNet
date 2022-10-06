@@ -28,9 +28,11 @@ $item-min-height: toRem(48);
         color: $color;
         background-color: $background;
         box-shadow: 0 0 0 $size $border-color;
-        transition: 0.1s;
-        &:is(.form__button):hover {
-          box-shadow: 0 0 0 ($size + 3) $border-color;
+        &:is(.form__button) {
+          transition: 0.1s;
+          &:hover {
+            box-shadow: 0 0 0 ($size + 3) $border-color;
+          }
         }
       }
       &_gray {

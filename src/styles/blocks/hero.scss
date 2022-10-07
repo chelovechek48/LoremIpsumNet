@@ -14,16 +14,16 @@ $min-height: calc(100vh - var(--header-height));
   background-position: center;
   box-sizing: border-box;
   @media (min-width: ($laptop + 1)) {
-    background-image: url('@images/hero/background_1920.jpg');
+    @include background-image_webp('hero/webp/background_1920.webp', 'hero/background_1920.jpg');
   }
   @media (max-width: $laptop) {
-    background-image: url('@images/hero/background_1024.jpg');
+    @include background-image_webp('hero/webp/background_1024.webp', 'hero/background_1024.jpg');
   }
   @media (max-width: $tablet) {
-    background-image: url('@images/hero/background_768.jpg');
+    @include background-image_webp('hero/webp/background_768.webp', 'hero/background_768.jpg');
   }
   @media (max-width: $mobile) {
-    background-image: url('@images/hero/background_500.jpg');
+    @include background-image_webp('hero/webp/background_500.webp', 'hero/background_500.jpg');
   }
   &__container {
     flex: 1;

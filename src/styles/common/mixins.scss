@@ -11,3 +11,10 @@
   outline-offset: 5px;
   transition: outline 0s;
 }
+
+@mixin background-image_webp($path-webp, $path-other, $alias: '@images/') {
+  background-image: url($alias + $path-other);
+  @supports (background-image: url($alias + $path-webp)) {
+    background-image: url($alias + $path-webp);
+  }
+}

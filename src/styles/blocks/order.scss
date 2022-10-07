@@ -16,16 +16,16 @@ $padding-target: calc(var(--header-height) + container.$padding);
     opacity: 0.1;
     z-index: -1;
     @media (min-width: ($laptop + 1)) {
-      background-image: url('@images/order/texture_1920.png');
+      @include background-image_webp('order/texture/webp/texture_1920.webp', 'order/texture/texture_1920.png');
     }
     @media (max-width: $laptop) {
-      background-image: url('@images/order/texture_1024.png');
+      @include background-image_webp('order/texture/webp/texture_1024.webp', 'order/texture/texture_1024.png');
     }
     @media (max-width: $tablet) {
-      background-image: url('@images/order/texture_768.png');
+      @include background-image_webp('order/texture/webp/texture_768.webp', 'order/texture/texture_768.png');
     }
     @media (max-width: $mobile) {
-      background-image: url('@images/order/texture_500.png');
+      @include background-image_webp('order/texture/webp/texture_500.webp', 'order/texture/texture_500.png');
     }
   }
   &__container {
@@ -64,7 +64,7 @@ $padding-target: calc(var(--header-height) + container.$padding);
       position: absolute;
       width: var(--order-circle-gap);
       height: 100%;
-      background-image: url('@images/order/background-dots.png');
+      @include background-image_webp('order/background-dots.webp', 'order/background-dots.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position-y: center;

@@ -20,7 +20,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     main: './js/index.js',
-    choices: './js/choices.js',
+    select: './js/inputs/select.js',
+    range: './js/inputs/range.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

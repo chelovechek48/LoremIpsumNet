@@ -15,6 +15,7 @@ $header-background: #10101D;
     justify-content: space-between;
     gap: $gap-medium;
     overflow-x: auto;
+    overflow-y: hidden;
     padding-top: container.$padding;
     padding-bottom: container.$padding;
   }

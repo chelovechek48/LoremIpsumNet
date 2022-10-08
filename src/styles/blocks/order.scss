@@ -45,7 +45,7 @@ $padding-target: calc(var(--header-height) + container.$padding);
     padding: 0 container.$padding;
     &-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(toRem(150), 1fr));
       gap: $gap-medium;
       font-size: toRem(16);
       font-weight: 400;
@@ -71,8 +71,8 @@ $padding-target: calc(var(--header-height) + container.$padding);
     }
     &-circle {
       position: relative;
-      min-width: 100px;
-      min-height: 100px;
+      min-width: toRem(100);
+      min-height: toRem(100);
       background-color: $blue;
       display: flex;
       align-items: center;
@@ -88,8 +88,8 @@ $padding-target: calc(var(--header-height) + container.$padding);
       }
     }
     &-icon {
-      max-width: 50px;
-      max-height: 50px;
+      color: #fff;
+      font-size: toRem(40);
     }
   }
 
@@ -126,8 +126,8 @@ $padding-target: calc(var(--header-height) + container.$padding);
         }
       }
       &-circle {
-        min-width: 60px;
-        min-height: 60px;
+        min-width: toRem(60);
+        min-height: toRem(60);
         box-shadow: none;
         background-color: transparent;
         &::before, &::after {
@@ -135,7 +135,7 @@ $padding-target: calc(var(--header-height) + container.$padding);
         }
       }
       &-icon {
-        max-width: 40px;
+        font-size: toRem(35);
       }
       &-text {
         padding: 20px 20px 20px 0;

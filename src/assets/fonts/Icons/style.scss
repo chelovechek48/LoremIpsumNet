@@ -1,0 +1,75 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$font-family}';
+  src: url('@fonts/Icons/font-icons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class*="icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$font-family}' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-percent {
+  &:before {
+    content: $icon-percent; 
+  }
+}
+.icon-create-file {
+  &:before {
+    content: $icon-create-file; 
+  }
+}
+.icon-mail {
+  &:before {
+    content: $icon-mail; 
+  }
+}
+.icon-banknote {
+  &:before {
+    content: $icon-banknote; 
+  }
+}
+.icon-file {
+  &:before {
+    content: $icon-file; 
+  }
+}
+.icon-qiwi {
+  &:before {
+    content: $icon-qiwi; 
+  }
+}
+.icon-yandex-money {
+  &:before {
+    content: $icon-yandex-money; 
+  }
+}
+.icon-web-money {
+  &:before {
+    content: $icon-web-money; 
+  }
+}
+.icon-vk {
+  &:before {
+    content: $icon-vk; 
+  }
+}
+

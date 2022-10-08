@@ -45,7 +45,7 @@ $item-line-height: form.$item-min-height;
     max-width: 100%;
     bottom: 100%;
     pointer-events: none;
-    padding: 0 (form.$item-padding + $margin-right) 0 form.$item-padding;
+    padding: 0 calc(form.$item-padding + $margin-right) 0 form.$item-padding;
     line-height: $item-line-height;
     box-sizing: border-box;
   }

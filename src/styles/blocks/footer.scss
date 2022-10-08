@@ -26,8 +26,8 @@ $footer-color: #C3C3C3;
     }
   }
   &__icon {
-    width: toRem(20);
-    height: toRem(20);
+    color: $blue;
+    font-size: toRem(20);
     margin-right: 10px;
   }
   &__separator {

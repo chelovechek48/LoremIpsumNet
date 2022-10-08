@@ -1,4 +1,5 @@
 @use '../common/variables/colors' as *;
+@use '../common/functions' as *;
 
 @mixin touch-screen-only {
   @media (hover: none) and (pointer: coarse) {
@@ -7,8 +8,8 @@
 }
 
 @mixin focus-item {
-  outline: 3px $blue solid;
-  outline-offset: 5px;
+  outline: toRem(4) $blue solid;
+  outline-offset: toRem(4);
   transition: outline 0s;
 }
 

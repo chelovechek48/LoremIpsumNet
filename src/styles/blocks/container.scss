@@ -1,4 +1,6 @@
-$max-width: 1250px;
+@use '../common' as *;
+
+$max-width: toRem(1250);
 $padding: 20px;
 
 .container {

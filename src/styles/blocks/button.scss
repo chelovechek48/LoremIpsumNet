@@ -26,7 +26,7 @@
       box-shadow: 0 0 0 $size $border-color;
       transition: 0.1s;
       &:hover {
-        box-shadow: 0 0 0 ($size + 3) $border-color;
+        box-shadow: 0 0 0 toRem(4) $border-color;
       }
     }
     &_blue {

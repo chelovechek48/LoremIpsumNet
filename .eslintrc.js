@@ -14,6 +14,7 @@ module.exports = {
     'no-unused-vars': ['error', { varsIgnorePattern: 'SelectPlugin' }],
     'linebreak-style': 'off',
     'import/extensions': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.config.js'] }],
   },
   settings: {
     'import/resolver': {

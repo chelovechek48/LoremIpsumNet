@@ -63,7 +63,7 @@ module.exports = {
         use: [
           CssPlugin.loader,
           'css-loader',
-          'group-css-media-queries-loader',
+          'postcss-loader',
         ],
       },
       {
@@ -71,7 +71,7 @@ module.exports = {
         use: [
           CssPlugin.loader,
           'css-loader',
-          'group-css-media-queries-loader',
+          'postcss-loader',
           'sass-loader',
         ],
       },

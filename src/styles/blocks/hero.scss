@@ -14,16 +14,28 @@ $min-height: calc(100vh - var(--header-height));
   background-position: center;
   box-sizing: border-box;
   @media (min-width: ($laptop + 1)) {
-    @include background-image_webp('hero/webp/background_1920.webp', 'hero/background_1920.jpg');
+    background-image: image-set(
+    url('@images/hero/webp/background_1920.webp') type("image/webp"),
+    url('@images/hero/background_1920.jpg')
+    );
   }
   @media (max-width: $laptop) {
-    @include background-image_webp('hero/webp/background_1024.webp', 'hero/background_1024.jpg');
+    background-image: image-set(
+    url('@images/hero/webp/background_1024.webp') type("image/webp"),
+    url('@images/hero/background_1024.jpg')
+    );
   }
   @media (max-width: $tablet) {
-    @include background-image_webp('hero/webp/background_768.webp', 'hero/background_768.jpg');
+    background-image: image-set(
+    url('@images/hero/webp/background_768.webp') type("image/webp"),
+    url('@images/hero/background_768.jpg')
+    );
   }
   @media (max-width: $mobile) {
-    @include background-image_webp('hero/webp/background_500.webp', 'hero/background_500.jpg');
+    background-image: image-set(
+    url('@images/hero/webp/background_500.webp') type("image/webp"),
+    url('@images/hero/background_500.jpg')
+    );
   }
   &__container {
     flex: 1;
